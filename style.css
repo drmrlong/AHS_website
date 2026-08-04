@@ -347,6 +347,84 @@ textarea { resize: vertical; min-height: 130px; }
   font-size: .95rem;
 }
 
+/* ── Mobile ──────────────────────────────── */
+@media (max-width: 768px) {
+
+  /* Nav — hide text, show logo only; stack links into hamburger-free scrollable row */
+  nav {
+    padding: 0 1rem;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+
+  .nav-brand {
+    height: 56px;
+    font-size: .82rem;
+  }
+
+  .nav-brand img { height: 32px; }
+
+  .nav-links {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 0;
+    border-top: 1px solid var(--border);
+    padding: 0;
+    scrollbar-width: none;
+  }
+  .nav-links::-webkit-scrollbar { display: none; }
+
+  .nav-links li { flex-shrink: 0; }
+
+  .nav-links a {
+    display: block;
+    padding: .65rem .9rem;
+    font-size: .72rem;
+  }
+
+  /* Hero */
+  .hero { padding: 3.5rem 1.25rem 3rem; }
+  .hero p { font-size: .97rem; margin-bottom: 1.8rem; }
+
+  /* Buttons — stack on small screens */
+  .hero .btn { display: block; width: 100%; text-align: center; margin-bottom: .75rem; }
+  .hero .btn + .btn { margin-left: 0 !important; }
+
+  /* Sections */
+  .section { padding: 3.5rem 1.25rem; }
+
+  /* About grid — image smaller on mobile */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .about-grid img,
+  .about-avatar {
+    max-width: 260px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  /* Pillars — single column on very small screens */
+  .pillars { grid-template-columns: 1fr; }
+
+  /* Contact */
+  .contact-wrap { gap: 2rem; }
+
+  /* Solution page tables */
+  table { font-size: .82rem; }
+  table td, table th { padding: .6rem .7rem !important; }
+}
+
+@media (max-width: 420px) {
+  .nav-brand span:last-child { display: none; } /* hide "Anderson Hospitality Solutions" text, keep logo */
+  .hero h1 { font-size: 1.8rem; }
+  .section h2 { font-size: 1.4rem; }
+}
+
 /* ── Footer ──────────────────────────────── */
 footer {
   background: var(--surface);
